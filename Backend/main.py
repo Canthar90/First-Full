@@ -14,7 +14,7 @@ def random_drink():
     return jsonify(data)
 
 
-@app.route("/baceknd/drink/<name>")
+@app.route("/backend/drink/<name>")
 def drink_by_name(name):
     data = drink_api.search_by_name(name)
     return jsonify(data)

@@ -68,8 +68,9 @@ def search_by_ingredient( ingredient):
         drink_list = response.json()
         drink_list = drink_list["drinks"]
         end_list = []
-        for i, v in enumerate(drink_list):
-            end_list.append([drink_list[i]["strDrink"], drink_list[i]["strDrinkThumb"]])
+        end_list = drink_list
+        # for i, v in enumerate(drink_list):
+        #     end_list.append([drink_list[i]["strDrink"], drink_list[i]["strDrinkThumb"]])
         return {"end_message" :end_list, "end_flag": True}
     except:
         return {"end_message" :"You provided bad ingredient name", "end_flag":False}
