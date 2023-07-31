@@ -1,9 +1,12 @@
 from flask import Flask
 from flask import jsonify
+import logging
 import drink_api
 
 
 app = Flask(__name__)
+
+logging.basicConfig(level=logging.DEBUG)
 
 @app.route("/backend/random-drink")
 def random_drink():
