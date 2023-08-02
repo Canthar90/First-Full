@@ -1,7 +1,7 @@
 <template>
-  <main style="bg-slate-400">
-    <div>Yooo</div>
-  </main>
+  <body>
+    <div class="pt-24">Yooo</div>
+  </body>
 </template>
 
 <script lang="ts" setup></script>
