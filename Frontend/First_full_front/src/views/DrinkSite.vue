@@ -1,6 +1,6 @@
 <template>
-  <body>
-    <div class="pt-24">Yooo</div>
+  <body class="px-2">
+    <div class="pt-16">Yooo</div>
   </body>
 </template>
 
