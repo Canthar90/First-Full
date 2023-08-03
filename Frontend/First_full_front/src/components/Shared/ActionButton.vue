@@ -27,6 +27,7 @@ const buttonClass = computed(() => {
     [buttonType.value]: true
   }
 })
+console.log(buttonClass.value)
 </script>
 
 <style scoped>
@@ -35,10 +36,10 @@ button {
 }
 
 .primary {
-  @apply rounded border-0 bg-yellow-900 text-white hover:shadow-yellow-950;
+  @apply rounded border-0 bg-yellow-900 text-white hover:shadow-brown;
 }
 
 .secondary {
-  @apply bg-transparent text-yellow-900 hover:border-t-yellow-700 hover:text-blue-950;
+  @apply bg-transparent text-yellow-900 hover:bg-amber-700 hover:text-blue-950;
 }
 </style>
