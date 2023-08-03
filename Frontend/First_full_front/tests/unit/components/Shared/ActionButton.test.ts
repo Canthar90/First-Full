@@ -1,7 +1,6 @@
 import { render, screen } from '@testing-library/vue'
 
 import ActionButton from '@/components/Shared/ActionButton.vue'
-import exp from 'constants'
 
 describe('ActionButton', () => {
   const renderActionButton = (buttonType = 'primary') => {
