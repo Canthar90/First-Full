@@ -6,9 +6,15 @@ export const useDrinkStore = defineStore('drink', () => {
   const drinkByNameCollapseFlag = ref(false)
   const searchDrinkByIngriedientCollapseFlag = ref(false)
 
+  const RANDOM_DRINK_INIT = () => {
+    // It change value of randomDrinkCollapseFlag to true
+    randomDrinkCollapseFlag.value = true
+  }
+
   return {
     randomDrinkCollapseFlag,
     drinkByNameCollapseFlag,
-    searchDrinkByIngriedientCollapseFlag
+    searchDrinkByIngriedientCollapseFlag,
+    RANDOM_DRINK_INIT
   }
 })
