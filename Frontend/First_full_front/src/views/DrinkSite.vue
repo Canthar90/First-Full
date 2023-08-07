@@ -1,16 +1,30 @@
 <template>
   <body class="px-2">
-    <div class="pt-16 grid grid-cols-3 justify-center">
-      <figure class="mt-8 bg-slate-800 rounded-xl md:p-8 col-start-2 justify-center">
-        <div class="text-white col-start-2 flex justify-end">
+    <div class="pt-16 grid grid-cols-10 justify-center">
+      <figure
+        class="mt-8 bg-slate-800 rounded-xl md:p-8 col-start-4 col-span-4 justify-center gap-x-6"
+      >
+        <div v-if="!drinkStore.randomDrinkCollapseFlag">
+          <div class="text-orange-200">
+            Are you tired of the same old drinks and looking for an exciting new fling for your
+            taste buds? Look no further, because we have the ultimate concoction of romance and
+            mixology waiting just for you!
+          </div>
+          <div class="text-orange-200 pt-4 pb-4">
+            Introducing "Mix & Mingle" - your go-to drink recipe matchmaker that will sweep you off
+            your feet and leave you thirsting for more! Our random drink recipe generator is like a
+            dating site for your taste buds, creating delightful and unexpected connections that
+            will leave you wanting to say, "Cheers!"
+          </div>
+        </div>
+
+        <div class="text-white col-start-2 flex justify-end px-12">
           <action-button
-            text="I feel Lucky"
+            text="Find Your Match"
             buttonType="primary"
             @click="randomDrink"
           ></action-button>
         </div>
-
-        <div v-if="drinkStore.randomDrinkCollapseFlag">OOOOOOOOOOO</div>
       </figure>
     </div>
   </body>
