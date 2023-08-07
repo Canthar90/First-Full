@@ -13,6 +13,8 @@
     </div>
   </div>
 
+  <div v-if="drinkStore.randomDrinkCollapseFlag">{{ drinkStore.randomDrinkRecipe }}</div>
+
   <div class="text-white col-start-2 flex justify-end px-12">
     <action-button text="Find Your Match" buttonType="primary" @click="randomDrink"></action-button>
   </div>
@@ -24,4 +26,5 @@ import { useDrinkStore } from '@/stores/drinks'
 
 const drinkStore = useDrinkStore()
 const randomDrink = drinkStore.RANDOM_DRINK_INIT
+// const getDrink = drinkStore.FETCH_RANDOM_DRINK
 </script>
