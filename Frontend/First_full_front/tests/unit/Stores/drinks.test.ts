@@ -1,4 +1,3 @@
-import type { Mock } from 'vitest'
 import { createPinia, setActivePinia } from 'pinia'
 
 import { useDrinkStore } from '@/stores/drinks'
