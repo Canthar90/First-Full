@@ -8,13 +8,15 @@ describe('RandomDrink', () => {
   describe('Displays elements', () => {
     const renderRandomDrink = () => {
       const pinia = createTestingPinia()
-      const drinsStore = useDrinkStore()
+      const drinksStore = useDrinkStore()
 
       render(RandomDrink, {
         global: {
           plugins: [pinia]
         }
       })
+
+      return { drinksStore }
     }
 
     const baseSentence =

@@ -58,8 +58,8 @@ def response_refactor(response):
             f"the recipe: {drink['strInstructions']}"
         cutted_message += f"the recipe: {drink['strInstructions']}"
 
-    answers = {"Full Message": message, "Dring Name": name, "Image url": image, "Description": cutted_message,
-               "Recipe": drink['strInstructions'], "Ingredients": ingredients, "Ingredients list": ingredients_list}
+    answers = {"FullMessage": message, "DrinkName": name, "ImageUrl": image, "Description": cutted_message,
+               "Recipe": drink['strInstructions'], "Ingredients": ingredients, "IngredientsList": ingredients_list}
     return answers
 
 
