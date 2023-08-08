@@ -3,7 +3,9 @@
     <random-drink-initial />
   </div>
 
-  <div v-if="drinkStore.randomDrinkCollapseFlag">{{ drinkStore.randomDrinkRecipe }}</div>
+  <div v-if="drinkStore.randomDrinkCollapseFlag">
+    <random-drink-drink />
+  </div>
 </template>
 
 <script lang="ts" setup>

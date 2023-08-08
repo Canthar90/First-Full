@@ -11,7 +11,7 @@
     to say, "Cheers!"
   </div>
 
-  <div class="text-white col-start-2 flex justify-end px-12">
+  <div class="text-white flex justify-end px-12">
     <action-button text="Find Your Match" buttonType="primary" @click="randomDrink"></action-button>
   </div>
 </template>
