@@ -21,4 +21,9 @@ describe('Initial state', () => {
     const drinkStore = useDrinkStore()
     expect(drinkStore.searchDrinkByIngriedientCollapseFlag).toBe(false)
   })
+
+  it('stores randomDrinkRecipe object', () => {
+    const drinkStore = useDrinkStore()
+    expect(drinkStore.randomDrinkRecipe.Description).toBe('')
+  })
 })
