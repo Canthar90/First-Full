@@ -1,7 +1,14 @@
 <template>
   <div class="text-orange-200">
     <h3 class="text-xl pb-4">{{ drinkStore.randomDrinkRecipe.DrinkName }}</h3>
-    <img :src="drinkStore.randomDrinkRecipe.ImageUrl" alt="Drink image" class="rounded-md w-min" />
+    <div class="flex justify-center">
+      <img
+        :src="drinkStore.randomDrinkRecipe.ImageUrl"
+        alt="Drink image"
+        class="rounded-md w-[80%]"
+      />
+    </div>
+
     <h2 class="text-md pt-4 pb-2">Nessesary ingredinents:</h2>
     <ul class="list-disc list-inside">
       <li v-for="ingredient in drinkStore.randomDrinkRecipe.IngredientsList" :key="ingredient">

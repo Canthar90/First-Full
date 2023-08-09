@@ -1,6 +1,11 @@
 import { createPinia, setActivePinia } from 'pinia'
+import type { Mock } from 'vitest'
+import axios from 'axios'
 
 import { useDrinkStore } from '@/stores/drinks'
+
+vi.mock('axios')
+const axiosGetMock = axios.get as Mock
 
 describe('Initial state', () => {
   beforeEach(() => {
@@ -25,5 +30,29 @@ describe('Initial state', () => {
   it('stores randomDrinkRecipe object', () => {
     const drinkStore = useDrinkStore()
     expect(drinkStore.randomDrinkRecipe.Description).toBe('')
+  })
+})
+
+describe('Fucntionality', () => {
+  describe('API related functions', () => {
+    beforeEach(() => {
+      axiosGetMock.mockResolvedValue({
+        data: {
+          Description: 'Drink recipe',
+          DrinkName: 'Cuba Libre'
+        }
+      })
+    })
+    describe('FETCH_RANDOM_DRINK', () => {
+      it('check if random drink object was created', async () => {
+        const drinkStore = useDrinkStore()
+        await drinkStore.FETCH_RANDOM_DRINK()
+        expect(axios.get).toHaveBeenCalledWith('http://myfakeapi.com/backend/random-drink')
+        expect(drinkStore.randomDrinkRecipe).toEqual({
+          Description: 'Drink recipe',
+          DrinkName: 'Cuba Libre'
+        })
+      })
+    })
   })
 })
