@@ -1,5 +1,13 @@
 <template>
   <div class="text-orange-200">
+    <div class="flex justify-end">
+      <font-awesome-icon
+        :icon="['fas', 'x']"
+        class="text-xl"
+        role="button"
+        @click="closeRandomDrink"
+      ></font-awesome-icon>
+    </div>
     <h3 class="text-xl pb-4">{{ drinkStore.randomDrinkRecipe.DrinkName }}</h3>
     <div class="flex justify-center">
       <img
@@ -29,4 +37,5 @@ import { useDrinkStore } from '@/stores/drinks'
 
 const drinkStore = useDrinkStore()
 const rerolDrink = drinkStore.FETCH_RANDOM_DRINK
+const closeRandomDrink = drinkStore.CLOSE_RANDOM_DRINK
 </script>
