@@ -54,5 +54,13 @@ describe('Fucntionality', () => {
         })
       })
     })
+
+    describe('RANDOM_DRINK_INIT', () => {
+      it('checks if collapse flag was seted to true', () => {
+        const drinkStore = useDrinkStore()
+        drinkStore.RANDOM_DRINK_INIT()
+        expect(drinkStore.randomDrinkCollapseFlag).toBe(true)
+      })
+    })
   })
 })
