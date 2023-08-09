@@ -31,6 +31,11 @@ describe('Initial state', () => {
     const drinkStore = useDrinkStore()
     expect(drinkStore.randomDrinkRecipe.Description).toBe('')
   })
+
+  it('stores drinkByName empty object', () => {
+    const drinkStore = useDrinkStore()
+    expect(drinkStore.drinkByName.Description).toBe('')
+  })
 })
 
 describe('Fucntionality', () => {
@@ -78,6 +83,26 @@ describe('Fucntionality', () => {
           IngredientsList: [],
           Recipe: ''
         })
+      })
+    })
+
+    describe('GET_DRINK_BY_NAME', () => {
+      it('checks if function is getting drinkByName object and updates data', async () => {
+        const drinkStore = useDrinkStore()
+        await drinkStore.GET_DRINK_BY_NAME('Some Drink')
+        expect(axios.get).toHaveBeenCalledWith('http://myfakeapi.com/backend/drink/Some Drink')
+        expect(drinkStore.drinkByName).toEqual({
+          Description: 'Drink recipe',
+          DrinkName: 'Cuba Libre'
+        })
+      })
+    })
+
+    describe('DRINK_BY_NAME_INIT', () => {
+      it('checks if drinkByNameCollapseFlag is true after using the function', () => {
+        const drinkStore = useDrinkStore()
+        drinkStore.DRINK_BY_NAME_INIT('Any name')
+        expect(drinkStore.drinkByNameCollapseFlag).toBe(true)
       })
     })
   })
