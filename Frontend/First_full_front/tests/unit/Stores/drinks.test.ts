@@ -62,5 +62,23 @@ describe('Fucntionality', () => {
         expect(drinkStore.randomDrinkCollapseFlag).toBe(true)
       })
     })
+
+    describe('CLOSE_RANDOM_DRINK', () => {
+      it('Resets random drink collapsible flag and random drink recipe ', () => {
+        const drinkStore = useDrinkStore()
+        drinkStore.CLOSE_RANDOM_DRINK()
+        expect(drinkStore.randomDrinkCollapseFlag).toBe(false)
+
+        expect(drinkStore.randomDrinkRecipe).toStrictEqual({
+          Description: '',
+          DrinkName: '',
+          FullMessage: '',
+          ImageUrl: '',
+          Ingredients: '',
+          IngredientsList: [],
+          Recipe: ''
+        })
+      })
+    })
   })
 })
