@@ -48,6 +48,17 @@ describe('Fucntionality', () => {
         }
       })
     })
+
+    const emptyDrinkObject = {
+      Description: '',
+      DrinkName: '',
+      FullMessage: '',
+      ImageUrl: '',
+      Ingredients: '',
+      IngredientsList: [],
+      Recipe: ''
+    }
+
     describe('FETCH_RANDOM_DRINK', () => {
       it('check if random drink object was created', async () => {
         const drinkStore = useDrinkStore()
@@ -74,15 +85,7 @@ describe('Fucntionality', () => {
         drinkStore.CLOSE_RANDOM_DRINK()
         expect(drinkStore.randomDrinkCollapseFlag).toBe(false)
 
-        expect(drinkStore.randomDrinkRecipe).toStrictEqual({
-          Description: '',
-          DrinkName: '',
-          FullMessage: '',
-          ImageUrl: '',
-          Ingredients: '',
-          IngredientsList: [],
-          Recipe: ''
-        })
+        expect(drinkStore.randomDrinkRecipe).toStrictEqual(emptyDrinkObject)
       })
     })
 
@@ -103,6 +106,16 @@ describe('Fucntionality', () => {
         const drinkStore = useDrinkStore()
         drinkStore.DRINK_BY_NAME_INIT('Any name')
         expect(drinkStore.drinkByNameCollapseFlag).toBe(true)
+      })
+    })
+
+    describe('CLOSE_SEARCH_DRINK_BY_NAME', () => {
+      it('checks if collapse flag is changed and drinkByName data is celaned', () => {
+        const drinkStore = useDrinkStore()
+        drinkStore.CLOSE_SEARCH_DRINK_BY_NAME()
+        expect(drinkStore.drinkByNameCollapseFlag).toBe(false)
+
+        expect(drinkStore.drinkByName).toEqual(emptyDrinkObject)
       })
     })
   })
