@@ -64,6 +64,19 @@ export const useDrinkStore = defineStore('drink', () => {
     drinkByName.value = drink
   }
 
+  const CLOSE_SEARCH_DRINK_BY_NAME = () => {
+    drinkByNameCollapseFlag.value = false
+    drinkByName.value = {
+      Description: '',
+      DrinkName: '',
+      FullMessage: '',
+      ImageUrl: '',
+      Ingredients: '',
+      IngredientsList: [],
+      Recipe: ''
+    }
+  }
+
   return {
     randomDrinkCollapseFlag,
     drinkByNameCollapseFlag,
@@ -74,6 +87,7 @@ export const useDrinkStore = defineStore('drink', () => {
     FETCH_RANDOM_DRINK,
     CLOSE_RANDOM_DRINK,
     GET_DRINK_BY_NAME,
-    DRINK_BY_NAME_INIT
+    DRINK_BY_NAME_INIT,
+    CLOSE_SEARCH_DRINK_BY_NAME
   }
 })
