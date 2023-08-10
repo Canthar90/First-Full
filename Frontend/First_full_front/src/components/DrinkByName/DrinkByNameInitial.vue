@@ -14,6 +14,7 @@
   <form
     class="flex h12 w-full items-center rounded-3xl border border-solid bg-slate-800 border-slate-950 text-orange-200"
     @submit.prevent="searchForDrink"
+    role="form"
   >
     <font-awesome-icon
       :icon="['fas', 'search']"
