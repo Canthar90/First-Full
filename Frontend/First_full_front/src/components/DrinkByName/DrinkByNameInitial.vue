@@ -40,9 +40,11 @@ import { ref } from 'vue'
 import { useDrinkStore } from '@/stores/drinks'
 import ActionButton from '../Shared/ActionButton.vue'
 import TextInput from '@/components/Shared/TextInput.vue'
+
 const searchSentence = ref('')
+const drinkStore = useDrinkStore()
 
 const searchForDrink = () => {
-  ;('')
+  drinkStore.DRINK_BY_NAME_INIT(searchSentence.value)
 }
 </script>
