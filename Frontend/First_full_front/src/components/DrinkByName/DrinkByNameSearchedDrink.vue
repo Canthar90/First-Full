@@ -1,25 +1,31 @@
 <template>
-  <div class="text-orange-200">
-    <div class="flex justify-end">
-      <font-awesome-icon
-        :icon="['fas', 'x']"
-        class="text-xl"
-        role="button"
-        @click="closeSearchDrinkByName"
-      ></font-awesome-icon>
-    </div>
-    <h3 class="text-xl pb-4">{{ drinkStore.drinkByName.DrinkName }}</h3>
-    <div class="flex justify-center">
-      <img :src="drinkStore.drinkByName.ImageUrl" alt="Drink image" class="rounded-md w-[80%]" />
-    </div>
+  <div v-if="!validationFlag">
+    <div class="text-orange-200">
+      <div class="flex justify-end">
+        <font-awesome-icon
+          :icon="['fas', 'x']"
+          class="text-xl"
+          role="button"
+          @click="closeSearchDrinkByName"
+        ></font-awesome-icon>
+      </div>
+      <h3 class="text-xl pb-4">{{ drinkStore.drinkByName.DrinkName }}</h3>
+      <div class="flex justify-center">
+        <img :src="drinkStore.drinkByName.ImageUrl" alt="Drink image" class="rounded-md w-[80%]" />
+      </div>
 
-    <h2 class="text-md pt-4 pb-2">Nessesary ingredinents:</h2>
-    <ul class="list-disc list-inside">
-      <li v-for="ingredient in drinkStore.drinkByName.IngredientsList" :key="ingredient">
-        {{ ingredient }}
-      </li>
-    </ul>
-    <p class="pt-4 pb-12">{{ drinkStore.drinkByName.Description }}</p>
+      <h2 class="text-md pt-4 pb-2">Nessesary ingredinents:</h2>
+      <ul class="list-disc list-inside">
+        <li v-for="ingredient in drinkStore.drinkByName.IngredientsList" :key="ingredient">
+          {{ ingredient }}
+        </li>
+      </ul>
+      <p class="pt-4 pb-12">{{ drinkStore.drinkByName.Description }}</p>
+    </div>
+  </div>
+
+  <div>
+    <h3 class="text-xl pb-4 text-orange-200">Please reenter correct drink name</h3>
     <form
       class="flex h12 w-full items-center rounded-3xl border border-solid bg-slate-800 border-slate-950 text-orange-200"
       @submit.prevent="searchForDrink"
@@ -39,13 +45,13 @@
         </div>
       </div>
 
-      <ActionButton text="Search" type="secondary" class="rounded-r-3xl" />
+      <ActionButton text="Search" type="primary" class="!rounded-r-3xl" />
     </form>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import ActionButton from '@/components/Shared/ActionButton.vue'
 import TextInput from '../Shared/TextInput.vue'
 
@@ -53,6 +59,14 @@ import { useDrinkStore } from '@/stores/drinks'
 
 const drinkStore = useDrinkStore()
 const searchSentence = ref('')
+
+const validationFlag = computed(() => {
+  if (drinkStore.drinkByName.Description === 'Given name is faulty') {
+    return true
+  } else {
+    return false
+  }
+})
 
 const closeSearchDrinkByName = drinkStore.CLOSE_SEARCH_DRINK_BY_NAME
 const searchForDrink = () => {

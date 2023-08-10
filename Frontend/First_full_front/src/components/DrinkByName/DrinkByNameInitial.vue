@@ -30,7 +30,7 @@
       </div>
     </div>
 
-    <ActionButton text="Search" type="secondary" class="rounded-r-3xl" />
+    <ActionButton text="Search" type="secondary" class="!rounded-r-3xl" />
   </form>
 </template>
 
