@@ -36,6 +36,11 @@ describe('Initial state', () => {
     const drinkStore = useDrinkStore()
     expect(drinkStore.drinkByName.Description).toBe('')
   })
+
+  it('stores drinksByIngredient object', () => {
+    const drinkStore = useDrinkStore()
+    expect(drinkStore.drinksByIngredient.end_message).toEqual([''])
+  })
 })
 
 describe('Fucntionality', () => {
@@ -116,6 +121,22 @@ describe('Fucntionality', () => {
         expect(drinkStore.drinkByNameCollapseFlag).toBe(false)
 
         expect(drinkStore.drinkByName).toEqual(emptyDrinkObject)
+      })
+    })
+
+    describe('GET_DRINKS_BY_INGREDIENTS', () => {
+      it('checks if data is fetched form backend', async () => {
+        axiosGetMock.mockResolvedValue({
+          data: {
+            end_flag: true,
+            end_message: ['AnyMessage']
+          }
+        })
+        const drinkStore = useDrinkStore()
+        await drinkStore.GET_DRINKS_BY_INGREDIENTS('milk')
+
+        expect(axios.get).toHaveBeenCalledWith('http://myfakeapi.com/backend/search/milk')
+        expect(drinkStore.drinksByIngredient.end_message).toEqual(['AnyMessage'])
       })
     })
   })
