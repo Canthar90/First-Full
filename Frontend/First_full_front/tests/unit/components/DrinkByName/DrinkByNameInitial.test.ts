@@ -13,7 +13,10 @@ describe('DrinkByNameInitial', () => {
 
       render(DrinkByNameInitial, {
         global: {
-          plugins: [pinia]
+          plugins: [pinia],
+          stubs: {
+            FontAwesomeIcon: true
+          }
         }
       })
 

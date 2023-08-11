@@ -23,7 +23,10 @@ describe('RandomDrinkdrink', () => {
 
       render(RandomDrinkDrink, {
         global: {
-          plugins: [pinia]
+          plugins: [pinia],
+          stubs: {
+            FontAwesomeIcon: true
+          }
         }
       })
 
