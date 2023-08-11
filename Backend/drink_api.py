@@ -80,4 +80,4 @@ def search_by_ingredient(ingredient):
 
         return {"end_message": end_list, "end_flag": True}
     except:
-        return {"end_message": "You provided bad ingredient name", "end_flag": False}
+        return {"end_message": ["You provided bad ingredient name"], "end_flag": False}

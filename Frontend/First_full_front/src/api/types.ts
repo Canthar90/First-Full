@@ -7,3 +7,8 @@ export interface randomDrink {
   IngredientsList: string[]
   Recipe: string
 }
+
+export interface drinksByIngredient {
+  end_flag: boolean
+  end_message: string[]
+}
