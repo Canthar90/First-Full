@@ -1,14 +1,15 @@
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 import { defineStore } from 'pinia'
-import type { randomDrink } from '@/api/types'
+import type { randomDrink, drinksByIngredient } from '@/api/types'
 
 import getDrink from '@/api/getRandomDrink'
 import getDrinkByName from '@/api/getDrinkByName'
+import getDrinksByIngredient from '@/api/getDrinksByIngredient'
 
 export const useDrinkStore = defineStore('drink', () => {
   const randomDrinkCollapseFlag = ref(false)
   const drinkByNameCollapseFlag = ref(false)
-  const searchDrinkByIngriedientCollapseFlag = ref(false)
+  const drinksByIngriedientCollapseFlag = ref(false)
 
   const randomDrinkRecipe = ref<randomDrink>({
     Description: '',
@@ -28,6 +29,11 @@ export const useDrinkStore = defineStore('drink', () => {
     Ingredients: '',
     IngredientsList: [],
     Recipe: ''
+  })
+
+  const drinksByIngredient = ref<drinksByIngredient>({
+    end_flag: false,
+    end_message: ['']
   })
 
   const FETCH_RANDOM_DRINK = async () => {
@@ -77,17 +83,39 @@ export const useDrinkStore = defineStore('drink', () => {
     }
   }
 
+  const GET_DRINKS_BY_INGREDIENTS = async (ingredient: string) => {
+    const drinkNames = await getDrinksByIngredient(ingredient)
+    drinksByIngredient.value = drinkNames
+  }
+
+  const DRINKS_BY_INGREDIENTS_INIT = (ingredient: string) => {
+    drinksByIngriedientCollapseFlag.value = true
+    GET_DRINKS_BY_INGREDIENTS(ingredient)
+  }
+
+  const CLOSE_DRINKS_BY_INGREDIENTS = () => {
+    drinksByIngriedientCollapseFlag.value = false
+    drinksByIngredient.value = {
+      end_flag: false,
+      end_message: ['']
+    }
+  }
+
   return {
     randomDrinkCollapseFlag,
     drinkByNameCollapseFlag,
-    searchDrinkByIngriedientCollapseFlag,
+    drinksByIngriedientCollapseFlag,
     randomDrinkRecipe,
     drinkByName,
+    drinksByIngredient,
     RANDOM_DRINK_INIT,
     FETCH_RANDOM_DRINK,
     CLOSE_RANDOM_DRINK,
     GET_DRINK_BY_NAME,
     DRINK_BY_NAME_INIT,
-    CLOSE_SEARCH_DRINK_BY_NAME
+    CLOSE_SEARCH_DRINK_BY_NAME,
+    GET_DRINKS_BY_INGREDIENTS,
+    DRINKS_BY_INGREDIENTS_INIT,
+    CLOSE_DRINKS_BY_INGREDIENTS
   }
 })

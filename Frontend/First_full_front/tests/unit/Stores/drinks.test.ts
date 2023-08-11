@@ -24,7 +24,7 @@ describe('Initial state', () => {
 
   it('stores search drink by ingredient collapse flag', () => {
     const drinkStore = useDrinkStore()
-    expect(drinkStore.searchDrinkByIngriedientCollapseFlag).toBe(false)
+    expect(drinkStore.drinksByIngriedientCollapseFlag).toBe(false)
   })
 
   it('stores randomDrinkRecipe object', () => {
