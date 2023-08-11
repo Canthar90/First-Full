@@ -139,5 +139,27 @@ describe('Fucntionality', () => {
         expect(drinkStore.drinksByIngredient.end_message).toEqual(['AnyMessage'])
       })
     })
+
+    describe('DRINKS_BY_INGREDIENTS_INIT', () => {
+      it('checks if drinksByIngredientCollapseFlag is changed to true', () => {
+        const drinkStore = useDrinkStore()
+        drinkStore.DRINKS_BY_INGREDIENTS_INIT('milk')
+
+        expect(drinkStore.drinksByIngriedientCollapseFlag).toBe(true)
+      })
+    })
+
+    describe('CLOSE_DRINKS_BY_INGREDIENTS', () => {
+      it('check if data is cleaned and collapse flag is setted to false', () => {
+        const drinkStore = useDrinkStore()
+        drinkStore.drinksByIngredient.end_flag = true
+        drinkStore.drinkByNameCollapseFlag = true
+
+        drinkStore.CLOSE_DRINKS_BY_INGREDIENTS()
+
+        expect(drinkStore.drinksByIngriedientCollapseFlag).toBe(false)
+        expect(drinkStore.drinksByIngredient.end_flag).toEqual(false)
+      })
+    })
   })
 })
