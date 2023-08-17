@@ -25,7 +25,7 @@
     </ul>
     <p class="pt-4 pb-12">{{ drinkStore.randomDrinkRecipe.Description }}</p>
     <div class="flex justify-end">
-      <action-button text="Rerol" button-type="primary" @click="rerolDrink" />
+      <action-button text="Rerol" buttonType="primary" @click="rerolDrink" />
     </div>
   </div>
 </template>

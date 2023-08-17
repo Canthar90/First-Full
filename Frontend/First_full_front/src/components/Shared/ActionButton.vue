@@ -27,7 +27,6 @@ const buttonClass = computed(() => {
     [buttonType.value]: true
   }
 })
-console.log(buttonClass.value)
 </script>
 
 <style scoped>

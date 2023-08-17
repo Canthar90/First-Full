@@ -1,6 +1,6 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
-import type { randomDrink, drinksByIngredient, message } from '@/api/types'
+import type { randomDrink, drinksByIngredient } from '@/api/types'
 
 import getDrink from '@/api/getRandomDrink'
 import getDrinkByName from '@/api/getDrinkByName'

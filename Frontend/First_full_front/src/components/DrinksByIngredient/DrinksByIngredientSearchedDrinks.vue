@@ -21,6 +21,29 @@
     <div v-if="!drinkStore.drinksByIngredient.end_flag" class="flex items-center justify-center">
       <h3 class="text-xl">Given ingredient name is invalid</h3>
     </div>
+
+    <form
+      class="flex h12 w-full items-center rounded-3xl border border-solid bg-slate-800 border-slate-950 text-orange-200 mt-12"
+      @submint.prevent="searchByIngredient"
+      role="form"
+    >
+      <font-awesome-icon
+        :icon="['fas', 'search']"
+        class="ml-4 mr-3 text-xl text-orange-300"
+      ></font-awesome-icon>
+      <div class="flex h-full flex-1 flex-nowrap text-base font-light">
+        <div class="relative flex h-full flex-1 items-center pr-3">
+          <text-input
+            class="text-orange-200 bg-inherit"
+            id="ingredient"
+            v-model.lazy.trim="ingredient"
+            placeholder="Milk"
+          />
+        </div>
+      </div>
+
+      <action-button text="Search" buttonType="primary" class="!rounded-r-3xl" />
+    </form>
   </div>
 </template>
 
@@ -34,5 +57,7 @@ import ActionButton from '@/components/Shared/ActionButton.vue'
 const drinkStore = useDrinkStore()
 const ingredient = ref('')
 
-const searchByIngredient = () => drinkStore.GET_DRINKS_BY_INGREDIENTS(ingredient.value)
+const searchByIngredient = () => {
+  drinkStore.GET_DRINKS_BY_INGREDIENTS(ingredient.value)
+}
 </script>
