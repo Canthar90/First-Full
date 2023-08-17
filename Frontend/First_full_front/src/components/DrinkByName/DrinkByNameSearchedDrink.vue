@@ -25,7 +25,9 @@
   </div>
 
   <div>
-    <h3 class="text-xl pb-4 text-orange-200">Please reenter correct drink name</h3>
+    <h3 v-if="validationFlag" class="text-xl pb-4 text-orange-200">
+      Please reenter correct drink name
+    </h3>
     <form
       class="flex h12 w-full items-center rounded-3xl border border-solid bg-slate-800 border-slate-950 text-orange-200"
       @submit.prevent="searchForDrink"

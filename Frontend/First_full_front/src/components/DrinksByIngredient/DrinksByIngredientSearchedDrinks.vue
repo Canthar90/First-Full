@@ -1,5 +1,14 @@
 <template>
   <div class="text-orange-200">
+    <div class="flex justify-end pb-8">
+      <font-awesome-icon
+        :icon="['fax', 'x']"
+        class="text-xl"
+        role="button"
+        @click="closeSearchDrinkByIngredient"
+      >
+      </font-awesome-icon>
+    </div>
     <div
       v-if="drinkStore.drinksByIngredient.end_flag"
       class="grid grid-cols-3 gap-12 justify-items-center"
@@ -24,7 +33,7 @@
 
     <form
       class="flex h12 w-full items-center rounded-3xl border border-solid bg-slate-800 border-slate-950 text-orange-200 mt-12"
-      @submint.prevent="searchByIngredient"
+      @submit.prevent="searchByIngredient"
       role="form"
     >
       <font-awesome-icon
@@ -56,6 +65,8 @@ import ActionButton from '@/components/Shared/ActionButton.vue'
 
 const drinkStore = useDrinkStore()
 const ingredient = ref('')
+
+const closeSearchDrinkByIngredient = () => drinkStore.CLOSE_DRINKS_BY_INGREDIENTS()
 
 const searchByIngredient = () => {
   drinkStore.GET_DRINKS_BY_INGREDIENTS(ingredient.value)
