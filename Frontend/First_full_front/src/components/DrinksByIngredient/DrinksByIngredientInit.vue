@@ -15,7 +15,7 @@
   </div>
   <form
     class="flex h12 w-full items-center rounded-3xl border border-solid bg-slate-800 border-slate-950 text-orange-200"
-    @submit.prevent="searchByName"
+    @submit.prevent="searchByIngredient"
     role="form"
   >
     <font-awesome-icon
@@ -47,5 +47,5 @@ import { useDrinkStore } from '@/stores/drinks'
 const drinkStore = useDrinkStore()
 const ingredient = ref('')
 
-const searchByName = () => drinkStore.DRINKS_BY_INGREDIENTS_INIT(ingredient.value)
+const searchByIngredient = () => drinkStore.DRINKS_BY_INGREDIENTS_INIT(ingredient.value)
 </script>

@@ -1,6 +1,6 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
-import type { randomDrink, drinksByIngredient } from '@/api/types'
+import type { randomDrink, drinksByIngredient, message } from '@/api/types'
 
 import getDrink from '@/api/getRandomDrink'
 import getDrinkByName from '@/api/getDrinkByName'
@@ -33,7 +33,13 @@ export const useDrinkStore = defineStore('drink', () => {
 
   const drinksByIngredient = ref<drinksByIngredient>({
     end_flag: false,
-    end_message: ['']
+    end_message: [
+      {
+        idDrink: '',
+        strDrink: '',
+        strDrinkThumb: ''
+      }
+    ]
   })
 
   const FETCH_RANDOM_DRINK = async () => {
@@ -97,7 +103,13 @@ export const useDrinkStore = defineStore('drink', () => {
     drinksByIngriedientCollapseFlag.value = false
     drinksByIngredient.value = {
       end_flag: false,
-      end_message: ['']
+      end_message: [
+        {
+          idDrink: '',
+          strDrink: '',
+          strDrinkThumb: ''
+        }
+      ]
     }
   }
 

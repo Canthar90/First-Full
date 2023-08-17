@@ -8,7 +8,13 @@ export interface randomDrink {
   Recipe: string
 }
 
+export interface message {
+  idDrink: string
+  strDrink: string
+  strDrinkThumb: string
+}
+
 export interface drinksByIngredient {
   end_flag: boolean
-  end_message: string[]
+  end_message: message[]
 }

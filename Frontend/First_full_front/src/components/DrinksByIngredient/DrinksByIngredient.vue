@@ -1,7 +1,9 @@
 <template>
-  <div v-if="!drinkStore.drinkByNameCollapseFlag"><drinks-by-ingredient-init /></div>
+  <div v-if="!drinkStore.drinksByIngriedientCollapseFlag"><drinks-by-ingredient-init /></div>
 
-  <div v-if="drinkStore.drinkByNameCollapseFlag"><drinks-by-ingredient-searched-drinks />></div>
+  <div v-if="drinkStore.drinksByIngriedientCollapseFlag">
+    <drinks-by-ingredient-searched-drinks />
+  </div>
 </template>
 
 <script lang="ts" setup>
