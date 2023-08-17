@@ -39,7 +39,18 @@ describe('Initial state', () => {
 
   it('stores drinksByIngredient object', () => {
     const drinkStore = useDrinkStore()
-    expect(drinkStore.drinksByIngredient.end_message).toEqual([''])
+    expect(drinkStore.drinksByIngredient.end_message).toEqual([
+      {
+        idDrink: '',
+        strDrink: '',
+        strDrinkThumb: ''
+      }
+    ])
+  })
+
+  it('stores drinkByIngredientSearchWord empty variable', () => {
+    const drinkStore = useDrinkStore()
+    expect(drinkStore.drinksByIngredientSearchWord).toBe('')
   })
 })
 
@@ -137,6 +148,7 @@ describe('Fucntionality', () => {
 
         expect(axios.get).toHaveBeenCalledWith('http://myfakeapi.com/backend/search/milk')
         expect(drinkStore.drinksByIngredient.end_message).toEqual(['AnyMessage'])
+        expect(drinkStore.drinksByIngredientSearchWord).toEqual('milk')
       })
     })
 
@@ -159,6 +171,7 @@ describe('Fucntionality', () => {
 
         expect(drinkStore.drinksByIngriedientCollapseFlag).toBe(false)
         expect(drinkStore.drinksByIngredient.end_flag).toEqual(false)
+        expect(drinkStore.drinksByIngredientSearchWord).toEqual('')
       })
     })
   })

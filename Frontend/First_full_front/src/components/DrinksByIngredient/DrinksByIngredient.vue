@@ -13,5 +13,4 @@ import DrinksByIngredientSearchedDrinks from './DrinksByIngredientSearchedDrinks
 import { useDrinkStore } from '@/stores/drinks'
 
 const drinkStore = useDrinkStore()
-console.log(drinkStore.drinksByIngriedientCollapseFlag)
 </script>

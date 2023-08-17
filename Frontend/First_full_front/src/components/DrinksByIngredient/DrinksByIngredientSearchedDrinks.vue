@@ -2,13 +2,16 @@
   <div class="text-orange-200">
     <div class="flex justify-end pb-8">
       <font-awesome-icon
-        :icon="['fax', 'x']"
+        :icon="['fas', 'x']"
         class="text-xl"
         role="button"
         @click="closeSearchDrinkByIngredient"
       >
       </font-awesome-icon>
     </div>
+    <h3 class="flex justify-center text-xl pb-12">
+      Drinks with {{ drinkStore.drinksByIngredientSearchWord }}:
+    </h3>
     <div
       v-if="drinkStore.drinksByIngredient.end_flag"
       class="grid grid-cols-3 gap-12 justify-items-center"

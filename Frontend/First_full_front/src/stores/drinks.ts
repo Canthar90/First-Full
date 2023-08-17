@@ -10,6 +10,7 @@ export const useDrinkStore = defineStore('drink', () => {
   const randomDrinkCollapseFlag = ref(false)
   const drinkByNameCollapseFlag = ref(false)
   const drinksByIngriedientCollapseFlag = ref(false)
+  const drinksByIngredientSearchWord = ref('')
 
   const randomDrinkRecipe = ref<randomDrink>({
     Description: '',
@@ -92,6 +93,7 @@ export const useDrinkStore = defineStore('drink', () => {
   const GET_DRINKS_BY_INGREDIENTS = async (ingredient: string) => {
     const drinkNames = await getDrinksByIngredient(ingredient)
     drinksByIngredient.value = drinkNames
+    drinksByIngredientSearchWord.value = ingredient
   }
 
   const DRINKS_BY_INGREDIENTS_INIT = (ingredient: string) => {
@@ -101,6 +103,7 @@ export const useDrinkStore = defineStore('drink', () => {
 
   const CLOSE_DRINKS_BY_INGREDIENTS = () => {
     drinksByIngriedientCollapseFlag.value = false
+    drinksByIngredientSearchWord.value = ''
     drinksByIngredient.value = {
       end_flag: false,
       end_message: [
@@ -117,6 +120,7 @@ export const useDrinkStore = defineStore('drink', () => {
     randomDrinkCollapseFlag,
     drinkByNameCollapseFlag,
     drinksByIngriedientCollapseFlag,
+    drinksByIngredientSearchWord,
     randomDrinkRecipe,
     drinkByName,
     drinksByIngredient,
