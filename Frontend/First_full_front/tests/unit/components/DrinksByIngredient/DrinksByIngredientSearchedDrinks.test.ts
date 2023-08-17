@@ -49,5 +49,15 @@ describe('DrinksByIngredientSearchedDrinks', () => {
       const invalidWordNotification = screen.getByText('Given ingredient name is invalid')
       expect(invalidWordNotification).toBeInTheDocument()
     })
+
+    it('Renders correctly searched drinks', () => {
+      renderDrinksByIngredientSearchedDrinks()
+
+      const keywordNotification = screen.getByText('Drinks with Milk:')
+      expect(keywordNotification).toBeInTheDocument()
+
+      const drinkName = screen.getByText('Drink Name')
+      expect(drinkName).toBeInTheDocument()
+    })
   })
 })
