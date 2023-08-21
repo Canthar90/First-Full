@@ -25,6 +25,8 @@
             :src="element.strDrinkThumb"
             alt="Drink Image"
             class="flex items-center justify-center"
+            role="button"
+            @click="searchDrinkDetails(element.strDrink)"
           />
         </div>
       </div>
@@ -73,5 +75,10 @@ const closeSearchDrinkByIngredient = () => drinkStore.CLOSE_DRINKS_BY_INGREDIENT
 
 const searchByIngredient = () => {
   drinkStore.GET_DRINKS_BY_INGREDIENTS(ingredient.value)
+}
+
+const searchDrinkDetails = (drinkName: string) => {
+  drinkStore.GET_DRINK_BY_NAME(drinkName)
+  drinkStore.drinkByNameCollapseFlag = true
 }
 </script>
