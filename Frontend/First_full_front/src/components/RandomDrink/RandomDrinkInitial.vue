@@ -1,4 +1,6 @@
 <template>
+  <h3 class="text-orange-200 text-xl pb-4">🍹 Meet Your Perfect Drink Match! 🍹</h3>
+
   <div class="text-orange-200">
     Are you tired of the same old drinks and looking for an exciting new fling for your taste buds?
     Look no further, because we have the ultimate concoction of romance and mixology waiting just

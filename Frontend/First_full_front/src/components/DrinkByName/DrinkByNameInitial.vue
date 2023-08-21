@@ -1,4 +1,6 @@
 <template>
+  <h3 class="text-xl text-orange-200 pb-4">🌟 Find Your Dream Drink by Name! 🌟</h3>
+
   <div class="text-orange-200">
     Are you holding onto memories of that one captivating cocktail whose name escaped you? Or
     perhaps you're on a quest to reunite with an old favorite that made your taste buds swoon? Look
