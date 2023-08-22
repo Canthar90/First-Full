@@ -1,0 +1,95 @@
+{
+  "Full Name": "Dawid Cieślak",
+  "Title/Position": "Automation Engeener & Developer Wannabe",
+  "Summary/Introduction": "I'm a hardworking person who wants to work with code every day. I have 4 years of experience with Assembly level languages like STL, LAD, or FBD. I'm a self-educated Automation Engineer in a factory, to the point where I can modify and rewrite legacy programs.",
+  "Education": [
+    {
+      "Degree": "Engeener",
+      "Year": "2014 - 2018",
+      "University": "Nicolas Copernicus University, Toruń",
+      "Thesis Topic": "A spinning machine control system based on the XBC-DP4034 PLC controller"
+    }
+  ],
+  "Contact Information": {
+    "Website": "http://gothic-blog.herokuapp.com",
+    "Phone": "+48 723 477 697",
+    "City": "Golina, PL",
+    "Age": 27,
+    "Email": "d.cieslak90@gmail.com"
+  },
+  "Skills": [
+    { "Skill": "STL", "Percentage": "100%" },
+    { "Skill": "LAD", "Percentage": "100%" },
+    { "Skill": "FBD", "Percentage": "100%" },
+    { "Skill": "KEYENCE VISION SYSTEMS", "Percentage": "20%" },
+    { "Skill": "STEP 5", "Percentage": "100%" },
+    { "Skill": "STEP 7", "Percentage": "80%" },
+    { "Skill": "TIA PORTAL", "Percentage": "60%" },
+    { "Skill": "HTML", "Percentage": "55%" },
+    { "Skill": "CSS", "Percentage": "40%" },
+    { "Skill": "SQL", "Percentage": "20%" },
+    { "Skill": "PYTHON", "Percentage": "65%" },
+    { "Skill": "FLASK", "Percentage": "50%" },
+    { "Skill": "DJANGO", "Percentage": "40%" },
+    { "Skill": "PANDAS", "Percentage": "40%" },
+    { "Skill": "QT (PYSIDE6)", "Percentage": "30%" },
+    { "Skill": "SELENIUM", "Percentage": "50%" },
+    { "Skill": "PYTEST", "Percentage": "45%" },
+    { "Skill": "DOCKER", "Percentage": "20%" }
+  ],
+  "Resume": [
+    {
+      "Position": "SOFTWARE LOCALIZATION ENGEENER",
+      "Duration": "Nov 2022 - Present",
+      "Company": "Lionbridge Technologies, LLC",
+      "Responsibilities": [
+        "Preparing software elements for translation, working with XML, HTML files.",
+        "Checking software elements after translation for integrity, fixing occurring errors."
+      ]
+    },
+    {
+      "Position": "AUTOMATION ENGEENER",
+      "Duration": "Sep 2019 - Nov 2022",
+      "Company": "Wegmann-Automotive Polska Sp.Z.O.O, Nekla",
+      "Responsibilities": [
+        "Maintaining around 200 machines, ensuring spare parts availability.",
+        "Modifying and modernizing industrial machines or parts of them, changing old solutions to modern alternatives.",
+        "Technological analysis and setting up machines to meet production goals.",
+        "Rewriting programs from destroyed machines, patching up old programs from machines that were not able to meet production goals."
+      ]
+    },
+    {
+      "Position": "AUTOMATION ENGEENER",
+      "Duration": "Oct 2018 - Sep 2019",
+      "Company": "Alligator Polska Sp.Z.O.O, Nekla",
+      "Responsibilities": [
+        "Maintaining around 200 machines, ensuring spare parts availability.",
+        "Modifying and modernizing industrial machines or parts of them, changing old solutions to modern alternatives.",
+        "Technological analysis and setting up machines to meet production goals.",
+        "Rewriting programs from destroyed machines, patching up old programs from machines that were not able to meet production goals."
+      ]
+    },
+    {
+      "Position": "ELECTROMECHANICAL ENGEENER",
+      "Duration": "Mar 2018 - Oct 2018",
+      "Company": "PAK Serwis Sp.Z.O.O, Konin, PL",
+      "Responsibilities": [
+        "Mechanical repairs of coal power plant systems.",
+        "Electrical repairs of coal power plant systems."
+      ]
+    },
+    {
+      "Position": "INTERN IN THE ENGINEERING DEPARTMENT",
+      "Duration": "August 2017 - Oct 2017",
+      "Company": "ANIRO Sp.Z.O.O, Toruń, PL",
+      "Responsibilities": [
+        "Support for the engineering department identifying parts of documentation for inverters etc.",
+        "Creating simple electric documentation using Eplan.",
+        "Finally modernizing a yarning machine with complete electric documentation."
+      ]
+    }
+  ],
+  "Hobbies": "In my free time, I have a passion for brewing my own beer. Exploring the art and science of crafting unique brews is not only a creative outlet but also a relaxing way to unwind.",
+  "Github": "https://github.com/yourusername",
+  "LinkedIn": "https://linkedin.com/in/yourusername"
+}

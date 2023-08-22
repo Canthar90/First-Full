@@ -2,6 +2,7 @@ from flask import Flask
 from flask import jsonify
 import logging
 import drink_api
+import cv_load
 
 
 app = Flask(__name__)
@@ -24,6 +25,12 @@ def drink_by_name(name):
 @app.route("/backend/search/<ingredient>")
 def drink_by_ingredient(ingredient):
     data = drink_api.search_by_ingredient(ingredient)
+    return jsonify(data)
+
+
+@app.route("/backend/cv")
+def cv():
+    data = cv_load.load_cv_data()
     return jsonify(data)
 
 
