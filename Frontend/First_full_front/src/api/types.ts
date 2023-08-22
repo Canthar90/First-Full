@@ -37,7 +37,7 @@ export interface cvDataExperience {
   Company: string
   Duration: string
   Position: string
-  Responsibilities: [string]
+  Responsibilities: string[]
 }
 
 export interface cvDataSkill {
@@ -47,13 +47,13 @@ export interface cvDataSkill {
 
 export interface cvDataFrame {
   'Contact Information': cvDataContactInfo
-  Education: [cvDataEducation]
+  Education: cvDataContactInfo[]
   'Full Name': string
   Github: string
   Hobbies: string
   Linkedin: string
-  Resume: [cvDataExperience]
-  Skills: [cvDataSkill]
+  Resume: cvDataExperience[]
+  Skills: Array<cvDataSkill>
   Summary: string
   Title: string
 }

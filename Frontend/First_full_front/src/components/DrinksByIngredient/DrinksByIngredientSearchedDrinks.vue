@@ -80,6 +80,6 @@ const searchByIngredient = () => {
 const searchDrinkDetails = (drinkName: string) => {
   drinkStore.GET_DRINK_BY_NAME(drinkName)
   drinkStore.drinkByNameCollapseFlag = true
-  window.scrollTo({ top: 450, left: 0, behavior: 'smooth' })
+  // window.scrollTo({ top: 450, left: 0, behavior: 'smooth' })
 }
 </script>

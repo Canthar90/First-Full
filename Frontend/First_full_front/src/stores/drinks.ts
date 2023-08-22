@@ -11,6 +11,7 @@ export const useDrinkStore = defineStore('drink', () => {
   const drinkByNameCollapseFlag = ref(false)
   const drinksByIngriedientCollapseFlag = ref(false)
   const drinksByIngredientSearchWord = ref('')
+  const drinkByNameHosenOne = ref('')
 
   const randomDrinkRecipe = ref<randomDrink>({
     Description: '',
@@ -75,6 +76,7 @@ export const useDrinkStore = defineStore('drink', () => {
   const GET_DRINK_BY_NAME = async (drinkName: string) => {
     const drink = await getDrinkByName(drinkName)
     drinkByName.value = drink
+    drinkByNameHosenOne.value = drinkName
   }
 
   const CLOSE_SEARCH_DRINK_BY_NAME = () => {
@@ -123,6 +125,7 @@ export const useDrinkStore = defineStore('drink', () => {
     drinksByIngredientSearchWord,
     randomDrinkRecipe,
     drinkByName,
+    drinkByNameHosenOne,
     drinksByIngredient,
     RANDOM_DRINK_INIT,
     FETCH_RANDOM_DRINK,
