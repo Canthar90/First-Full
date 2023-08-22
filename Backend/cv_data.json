@@ -1,7 +1,7 @@
 {
   "Full Name": "Dawid Cieślak",
-  "Title/Position": "Automation Engeener & Developer Wannabe",
-  "Summary/Introduction": "I'm a hardworking person who wants to work with code every day. I have 4 years of experience with Assembly level languages like STL, LAD, or FBD. I'm a self-educated Automation Engineer in a factory, to the point where I can modify and rewrite legacy programs.",
+  "Title": "Automation Engeener & Developer Wannabe",
+  "Summary": "I'm a hardworking person who wants to work with code every day. I have 4 years of experience with Assembly level languages like STL, LAD, or FBD. I'm a self-educated Automation Engineer in a factory, to the point where I can modify and rewrite legacy programs.",
   "Education": [
     {
       "Degree": "Engeener",
@@ -11,7 +11,6 @@
     }
   ],
   "Contact Information": {
-    "Website": "http://gothic-blog.herokuapp.com",
     "Phone": "+48 723 477 697",
     "City": "Golina, PL",
     "Age": 27,
