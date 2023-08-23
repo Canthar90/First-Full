@@ -119,6 +119,8 @@ describe('Fucntionality', () => {
           Description: 'Drink recipe',
           DrinkName: 'Cuba Libre'
         })
+
+        expect(drinkStore.drinkByNameHosenOne).toEqual('Some Drink')
       })
     })
 

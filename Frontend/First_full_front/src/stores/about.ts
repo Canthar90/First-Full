@@ -10,7 +10,7 @@ import type {
 
 import getCVData from '@/api/getCVData'
 
-export const userCVStore = defineStore('cv', () => {
+export const useAboutStore = defineStore('cv', () => {
   const cvEducation = ref<cvDataEducation[]>([])
   const cvContactInfo = ref<cvDataContactInfo>()
   const cvExperience = ref<cvDataExperience[]>([])
