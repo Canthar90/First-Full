@@ -52,6 +52,11 @@ describe('Initial state', () => {
     const drinkStore = useDrinkStore()
     expect(drinkStore.drinksByIngredientSearchWord).toBe('')
   })
+
+  it('stores drinksByNameHosenOne variable', () => {
+    const drinkStore = useDrinkStore()
+    expect(drinkStore.drinkByNameHosenOne).toBe('')
+  })
 })
 
 describe('Fucntionality', () => {

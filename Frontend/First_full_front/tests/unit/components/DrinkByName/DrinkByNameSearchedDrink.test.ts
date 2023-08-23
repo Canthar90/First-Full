@@ -6,13 +6,13 @@ import DrinkByNameSearchedDrink from '@/components/DrinkByName/DrinkByNameSearch
 
 describe('DrinkByNameSearchedDrink', () => {
   describe('Displays Searched Drink elements', () => {
-    const renderDrinkByNameSearchedDrink = () => {
+    const renderDrinkByNameSearchedDrink = (description: string = 'Description of the drink') => {
       const pinia = createTestingPinia()
       const drinkStore = useDrinkStore()
 
       drinkStore.drinkByNameCollapseFlag = true
       drinkStore.drinkByName = {
-        Description: 'Description of the drink',
+        Description: description,
         DrinkName: 'Drink name',
         FullMessage: 'Message',
         ImageUrl: 'Drink image url',
@@ -34,7 +34,7 @@ describe('DrinkByNameSearchedDrink', () => {
     }
 
     it('Detects faulty drink name', () => {
-      const { drinkStore } = renderDrinkByNameSearchedDrink()
+      const { drinkStore } = renderDrinkByNameSearchedDrink('Given name is faulty')
       drinkStore.drinkByName.Description = 'Given name is faulty'
 
       const faultMessage = screen.getByText('Please reenter correct drink name')
