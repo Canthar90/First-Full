@@ -47,7 +47,7 @@ export interface cvDataSkill {
 
 export interface cvDataFrame {
   'Contact Information': cvDataContactInfo
-  Education: cvDataContactInfo[]
+  Education: cvDataEducation[]
   'Full Name': string
   Github: string
   Hobbies: string
