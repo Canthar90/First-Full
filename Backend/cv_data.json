@@ -1,7 +1,16 @@
 {
   "Full Name": "Dawid Cieślak",
   "Title": "Automation Engeener & Developer Wannabe",
-  "Summary": "I'm a hardworking person who wants to work with code every day. I have 4 years of experience with Assembly level languages like STL, LAD, or FBD. I'm a self-educated Automation Engineer in a factory, to the point where I can modify and rewrite legacy programs.",
+  "Summary": [
+    "🔧 Experienced Automation Engineer with a strong background in programming and maintaining Programmable Logic Controllers (PLCs).",
+    "🏭 Spent 4 years honing my skills in automation at a car parts factory, where I became proficient in low-level PLC languages like STL, LAD, and FBD. Successfully managed over 100 machines during my tenure.",
+    "🛠️ As a self-motivated professional, I took the initiative to become an expert in PLC programming without the guidance of a mentor or senior figure in the company. This enabled me to reverse engineer and modernize programs for numerous machines, contributing significantly to their efficiency.",
+    "💻 However, my passion for coding led me to explore new horizons. Over the past year, I have delved deep into Python, mastering it as a versatile tool for automation and problem-solving.",
+    "🌐 Additionally, I recently embarked on a journey to learn Vue.js, a progressive JavaScript framework. This has opened up exciting opportunities for me to build dynamic and interactive web applications.",
+    "💼 Furthermore, for over a half year, I have been working as a Software Localization Engineer, gaining valuable experience in adapting software and applications for different languages and cultures.",
+    "🚀 Now, I am actively seeking new challenges and opportunities to transition into a role as a Junior Frontend, Backend, or Fullstack Developer. Combining my automation engineering background and programming expertise with my enthusiasm for web development, I am determined to contribute my skills to innovative projects.",
+    "Let's connect and explore how we can collaborate on exciting development endeavors!"
+  ],
   "Education": [
     {
       "Degree": "Engeener",

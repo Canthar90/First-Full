@@ -54,6 +54,6 @@ export interface cvDataFrame {
   Linkedin: string
   Resume: cvDataExperience[]
   Skills: Array<cvDataSkill>
-  Summary: string
+  Summary: string[]
   Title: string
 }
