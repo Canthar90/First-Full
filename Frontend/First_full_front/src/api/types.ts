@@ -42,7 +42,7 @@ export interface cvDataExperience {
 
 export interface cvDataSkill {
   Percentage: string
-  Skil: string
+  Skill: string
 }
 
 export interface cvDataFrame {

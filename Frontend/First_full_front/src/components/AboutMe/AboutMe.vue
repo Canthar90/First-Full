@@ -58,6 +58,31 @@
         </div>
       </figure>
     </div>
+
+    <div class="col-span-6 grid grid-cols-6">
+      <div class="col-start-3 col-span-2 mt-8 p-8 bg-slate-800 rounded-xl border border-orange-300">
+        <h1 class="text-xl flex justify-center">🛠️ Skills</h1>
+      </div>
+    </div>
+
+    <div class="col-span-6 grid grid-cols-6 gap-4">
+      <figure
+        v-for="skill in aboutStore.cvSkills"
+        :key="skill.Skill"
+        class="mt-8 p-8 col-span-2 bg-slate-800 rounded-xl border border-orange-300"
+      >
+        <div class="grid gap-2">
+          <h1 class="text-md">{{ skill.Skill }}</h1>
+
+          <div class="w-full bg-slate-900 rounded-full h-2.5 mb-4 dark:bg-gray-700">
+            <div
+              class="bg-yellow-400 h-2.5 rounded-full"
+              :style="{ width: skill.Percentage }"
+            ></div>
+          </div>
+        </div>
+      </figure>
+    </div>
   </div>
 </template>
 
