@@ -1,6 +1,8 @@
 <template>
   <div class="text-orange-200 grid grid-cols-6 gap-2">
-    <figure class="mt-8 p-8 bg-slate-800 rounded-xl col-start-1 col-span-6">
+    <figure
+      class="mt-8 p-8 bg-slate-800 rounded-xl col-start-1 col-span-6 border border-orange-300"
+    >
       <h2 class="flex text-xl justify-center pb-4">Hi I'm Dawid Cieślak</h2>
       <div
         class="flex justify-left pt-4"
@@ -14,7 +16,7 @@
       <figure
         v-for="education in aboutStore.cvEducation"
         :key="education.Degree"
-        class="mt-8 p-8 bg-slate-800 rounded-xl col-span-2 col-start-3"
+        class="mt-8 p-8 bg-slate-800 rounded-xl col-span-2 col-start-3 border border-orange-300"
       >
         <div class="grid grid-cols-3 gap-2">
           <h1 class="text-xl col-span-3">📖 Education:</h1>
@@ -32,25 +34,30 @@
     </div>
 
     <div class="col-span-6 grid grid-cols-6">
-      <div class="col-start-3 col-span-2 mt-8 p-8 bg-slate-800 rounded-xl">
+      <div class="col-start-3 col-span-2 mt-8 p-8 bg-slate-800 rounded-xl border border-orange-300">
         <h1 class="text-xl flex justify-center">⚙️ Experience:</h1>
       </div>
     </div>
-    <figure
-      v-for="experience in aboutStore.cvExperience"
-      :key="experience.Duration"
-      class="mt-8 p-8 bg-slate-800 rounded-xl col-span-2 border border-orange-300"
-    >
-      <div class="grid gap-2">
-        <h1 class="text-xl">{{ experience.Position }}:</h1>
-        <p class="flex justify-end text-sm pb-4">{{ experience.Duration }}</p>
-        <p class="">At: {{ experience.Company }}</p>
-        <p class="pb-2">Responsibilites:</p>
-        <ul class="list-disc list-inside">
-          <li v-for="elem in experience.Responsibilities" :key="elem" class="pb-2">{{ elem }}</li>
-        </ul>
-      </div>
-    </figure>
+
+    <div class="col-span-6 grid grid-cols-6 gap-4">
+      <figure
+        v-for="experience in aboutStore.cvExperience"
+        :key="experience.Duration"
+        class="mt-8 p-8 col-span-2 bg-slate-800 rounded-xl border border-orange-300"
+      >
+        <div class="grid gap-2">
+          <h1 class="text-xl">{{ experience.Position }}:</h1>
+          <p class="flex justify-end text-sm pb-4">{{ experience.Duration }}</p>
+          <p class="">At: {{ experience.Company }}</p>
+          <p class="pb-2">Responsibilites:</p>
+          <ul class="list-disc list-inside">
+            <li v-for="elem in experience.Responsibilities" :key="elem" class="pb-2">
+              {{ elem }}
+            </li>
+          </ul>
+        </div>
+      </figure>
+    </div>
   </div>
 </template>
 
