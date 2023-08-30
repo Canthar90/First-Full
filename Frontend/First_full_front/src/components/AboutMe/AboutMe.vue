@@ -3,13 +3,23 @@
     <figure
       class="mt-8 p-8 bg-slate-800 rounded-xl col-start-1 col-span-6 border border-orange-300"
     >
-      <h2 class="flex text-xl justify-center pb-4">Hi I'm Dawid Cieślak</h2>
-      <div
-        class="flex justify-left pt-4"
-        v-for="element in aboutStore.cvData?.Summary"
-        :key="element"
-      >
-        <p>{{ element }}</p>
+      <h2 class="flex text-xl justify-center pb-8">Hi I'm Dawid Cieślak</h2>
+      <div class="grid grid-cols-6">
+        <div class="row-span-6 col-span-2 grid">
+          <img
+            class="flex justify-center justify-items-center rounded-xl object-scale-down w-[80%]"
+            alt="Profile image"
+            :src="aboutStore.cvData?.img"
+          />
+        </div>
+
+        <div
+          class="col-start-3 col-span-4 flex justify-left pt-4"
+          v-for="element in aboutStore.cvData?.Summary"
+          :key="element"
+        >
+          <p>{{ element }}</p>
+        </div>
       </div>
     </figure>
     <div class="col-span-6 grid grid-cols-6">

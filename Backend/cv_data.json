@@ -1,6 +1,7 @@
 {
   "Full Name": "Dawid Cieślak",
   "Title": "Automation Engeener & Developer Wannabe",
+  "img": "http://127.0.0.1:5000/backend/cv/img",
   "Summary": [
     "🔧 Experienced Automation Engineer with a strong background in programming and maintaining Programmable Logic Controllers (PLCs).",
     "🏭 Spent 4 years honing my skills in automation at a car parts factory, where I became proficient in low-level PLC languages like STL, LAD, and FBD. Successfully managed over 100 machines during my tenure.",

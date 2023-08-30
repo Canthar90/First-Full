@@ -52,6 +52,7 @@ export interface cvDataFrame {
   Github: string
   Hobbies: string
   LinkedIn: string
+  img: string
   Resume: cvDataExperience[]
   Skills: Array<cvDataSkill>
   Summary: string[]
