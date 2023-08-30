@@ -65,7 +65,7 @@
       </div>
     </div>
 
-    <div class="col-span-6 grid grid-cols-6 gap-4">
+    <div class="col-span-6 grid grid-cols-8 gap-2">
       <figure
         v-for="skill in aboutStore.cvSkills"
         :key="skill.Skill"
@@ -83,6 +83,32 @@
         </div>
       </figure>
     </div>
+
+    <div class="col-span-6 grid grid-cols-6 gap-2">
+      <figure class="mt-8 p-8 col-span-6 bg-slate-800 rounded-xl border border-orange-300">
+        <div class="grid grid-cols-1 grid-rows-2 gap-4">
+          <h1 class="text-xl flex justify-center">Reach me up on:</h1>
+          <div class="flex flex-nowrap flex-full justify-center">
+            <font-awesome-icon
+              class="text-xl cursor-pointer"
+              :icon="['fab', 'linkedin']"
+              role="button"
+              @click="goToLink(aboutStore.cvData?.LinkedIn)"
+            />
+            <font-awesome-icon
+              class="text-xl cursor-poiter px-4"
+              :icon="['fab', 'github']"
+              role="button"
+              @click="goToLink(aboutStore.cvData?.Github)"
+            />
+            <div class="flex flex-col justify-center">
+              <font-awesome-icon class="text-xl" :icon="['fa', 'phone']" />
+              <p class="text-xs">{{ aboutStore.cvContactInfo?.Phone }}</p>
+            </div>
+          </div>
+        </div>
+      </figure>
+    </div>
   </div>
 </template>
 
@@ -91,6 +117,10 @@ import { onMounted } from 'vue'
 import { useAboutStore } from '@/stores/about'
 
 const aboutStore = useAboutStore()
+
+const goToLink = (link: string | undefined) => {
+  window.open(link, '_blank')
+}
 
 onMounted(() => {
   if (!aboutStore.cvDataFetched) {
