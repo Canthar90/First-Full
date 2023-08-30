@@ -94,6 +94,13 @@
       </figure>
     </div>
 
+    <div class="col-span-6 grid gap-4">
+      <figure class="mt-8 p-8 bg-slate-800 rounded-xl border border-orange-300 flex flex-col">
+        <h1 class="text-xl flex justify-center">🎲 Hobbies</h1>
+        <p class="flex justify-center pt-8">{{ aboutStore.cvData?.Hobbies }}</p>
+      </figure>
+    </div>
+
     <div class="col-span-6 grid grid-cols-6 gap-2">
       <figure class="mt-8 p-8 col-span-6 bg-slate-800 rounded-xl border border-orange-300">
         <div class="grid grid-cols-1 grid-rows-2 gap-4">
